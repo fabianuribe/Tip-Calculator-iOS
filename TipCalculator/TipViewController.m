@@ -17,6 +17,7 @@
 
 - (IBAction)onTap:(id)sender;
 - (IBAction)onEdit:(id)sender;
+- (IBAction)onSettingsButton;
 
 - (void) updateValues;
 
@@ -36,6 +37,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.billTextField becomeFirstResponder];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
+
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -52,6 +56,9 @@
 
 - (IBAction)onEdit:(id)sender {
     [self updateValues];
+}
+
+- (IBAction)onSettingsButton {
 }
 
 

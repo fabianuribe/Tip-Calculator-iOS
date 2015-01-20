@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
+            <connections>
+                <outlet property="tipControl" destination="RvH-Xf-tDR" id="aTz-7f-UPY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the default percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ooq-65-Dxi">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="N9c-ej-81l"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="highlightedColor" red="0.71760574494949503" green="0.71760574494949503" blue="0.71760574494949503" alpha="1" colorSpace="calibratedRGB"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="N9c-ej-81l"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="82" y="230" width="237" height="21"/>
+                        <mask key="constraints">
+                            <include reference="N9c-ej-81l"/>
+                        </mask>
+                    </variation>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="RvH-Xf-tDR">
+                    <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                    <segments>
+                        <segment title="10%"/>
+                        <segment title="15%"/>
+                        <segment title="20%"/>
+                    </segments>
+                    <color key="tintColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="onSelect:" destination="-1" eventType="valueChanged" id="BCT-Yb-JPD"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ooq-65-Dxi" firstAttribute="centerX" secondItem="RvH-Xf-tDR" secondAttribute="centerX" id="06w-g6-FEr"/>
+                <constraint firstItem="RvH-Xf-tDR" firstAttribute="top" secondItem="Ooq-65-Dxi" secondAttribute="bottom" constant="44" id="LfP-zC-mSR"/>
+                <constraint firstItem="Ooq-65-Dxi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="65" id="Prv-kR-akf"/>
+                <constraint firstItem="Ooq-65-Dxi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XdV-Ae-3X1"/>
+                <constraint firstItem="RvH-Xf-tDR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="b6O-hU-04y"/>
+                <constraint firstItem="Ooq-65-Dxi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="230" id="dgI-Yc-BCt"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Ooq-65-Dxi"/>
+                    <exclude reference="RvH-Xf-tDR"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="06w-g6-FEr"/>
+                    <exclude reference="Prv-kR-akf"/>
+                    <exclude reference="XdV-Ae-3X1"/>
+                    <exclude reference="dgI-Yc-BCt"/>
+                    <exclude reference="LfP-zC-mSR"/>
+                    <exclude reference="b6O-hU-04y"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Ooq-65-Dxi"/>
+                    <include reference="RvH-Xf-tDR"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="06w-g6-FEr"/>
+                    <include reference="Prv-kR-akf"/>
+                    <include reference="XdV-Ae-3X1"/>
+                    <include reference="dgI-Yc-BCt"/>
+                    <include reference="LfP-zC-mSR"/>
+                    <include reference="b6O-hU-04y"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

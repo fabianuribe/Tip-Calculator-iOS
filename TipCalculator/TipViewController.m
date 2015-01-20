@@ -7,6 +7,7 @@
 //
 
 #import "TipViewController.h"
+#import "SettingsViewController.h"
 
 @interface TipViewController ()
 
@@ -17,9 +18,10 @@
 
 - (IBAction)onTap:(id)sender;
 - (IBAction)onEdit:(id)sender;
-- (IBAction)onSettingsButton;
-
+- (void)onSettingsButton;
 - (void) updateValues;
+- (void) readUserPreferences;
+
 
 @end
 
@@ -38,16 +40,20 @@
     [super viewDidLoad];
     [self.billTextField becomeFirstResponder];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
-
+    [self readUserPreferences];
     
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [self readUserPreferences];
+    [self.billTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (IBAction)onTap:(id)sender {
     [self.view endEditing:YES];
@@ -58,9 +64,9 @@
     [self updateValues];
 }
 
-- (IBAction)onSettingsButton {
+- (void)onSettingsButton {
+    [self.navigationController pushViewController:[[SettingsViewController alloc] init] animated:YES];
 }
-
 
 - (void) updateValues {
     float billAmount = [self.billTextField.text floatValue];
@@ -75,5 +81,15 @@
     self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", totalValue];
     
 }
+
+- (void) readUserPreferences {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int defaultIndex = (int)[defaults integerForKey:@"default_index"];
+    
+    self.tipControl.selectedSegmentIndex = defaultIndex;
+    NSLog(@"HOLA!!!!!!!");
+}
+
 
 @end

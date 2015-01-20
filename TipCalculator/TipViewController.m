@@ -88,7 +88,6 @@
     int defaultIndex = (int)[defaults integerForKey:@"default_index"];
     
     self.tipControl.selectedSegmentIndex = defaultIndex;
-    NSLog(@"HOLA!!!!!!!");
 }
 
 
